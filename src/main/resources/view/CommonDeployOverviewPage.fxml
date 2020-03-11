@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="380.0" prefWidth="600.0" styleClass="background" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.shdq.OPCUA_YML_gen_platform.controller.CommonDeployOverviewController">
+   <children>
+      <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" prefHeight="380.0" prefWidth="600.0" vbarPolicy="NEVER">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="380.0" prefWidth="600.0" styleClass="background">
+               <children>
+                  <VBox alignment="CENTER" fillWidth="false" prefHeight="380.0" prefWidth="600.0">
+                     <children>
+                        <AnchorPane prefHeight="100.0" prefWidth="600.0">
+                           <children>
+                              <HBox prefHeight="80.0" prefWidth="600.0">
+                                 <children>
+                                    <Label text="                   listenerPath：">
+                                       <HBox.margin>
+                                          <Insets left="40.0" right="50.0" top="30.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <TextField fx:id="listenerPath" disable="true" promptText="com.xx.xx.listener.">
+                                       <HBox.margin>
+                                          <Insets top="27.0" />
+                                       </HBox.margin>
+                                    </TextField>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="100.0" prefWidth="600.0">
+                           <children>
+                              <HBox prefHeight="80.0" prefWidth="600.0">
+                                 <children>
+                                    <Label text="                   nodesParser：">
+                                       <HBox.margin>
+                                          <Insets left="40.0" right="50.0" top="30.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <TextField fx:id="nodesParser" disable="true" promptText="com.xx.xx.MyParser">
+                                       <HBox.margin>
+                                          <Insets top="27.0" />
+                                       </HBox.margin>
+                                    </TextField>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="100.0">
+                           <children>
+                              <HBox prefHeight="80.0" prefWidth="600.0">
+                                 <children>
+                                    <Label text="                   publishRate：">
+                                       <HBox.margin>
+                                          <Insets left="40.0" right="50.0" top="30.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <TextField fx:id="publishRate" disable="true" promptText="毫秒">
+                                       <HBox.margin>
+                                          <Insets top="27.0" />
+                                       </HBox.margin>
+                                    </TextField>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="100.0" prefWidth="600.0">
+                           <children>
+                              <Button fx:id="edit" layoutX="356.0" layoutY="30.0" mnemonicParsing="false" onAction="#editCommonDeploy" text="编辑" />
+                              <Button fx:id="save" disable="true" layoutX="429.0" layoutY="30.0" mnemonicParsing="false" onAction="#saveCommonDeploy" text="保存" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

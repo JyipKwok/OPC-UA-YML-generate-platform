@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.shdq.OPCUA_YML_gen_platform.controller.BuildProfileController">
+   <children>
+      <VBox alignment="TOP_CENTER" prefHeight="500.0" prefWidth="600.0">
+         <children>
+            <TabPane fx:id="tabPane" prefHeight="468.0" prefWidth="600.0" styleClass="background" tabClosingPolicy="UNAVAILABLE">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin></TabPane>
+            <HBox alignment="TOP_CENTER">
+               <children>
+                  <Button fx:id="build" defaultButton="true" mnemonicParsing="false" onAction="#buildProfile" text="创建" HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Microsoft YaHei" size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="cancel" mnemonicParsing="false" onAction="#cancelBuild" text="取消" HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Microsoft YaHei" size="15.0" />
+                     </font>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="42.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.shdq.OPCUA_YML_gen_platform.controller.DetailDeployController">
+   <children>
+      <VBox alignment="TOP_CENTER" prefHeight="500.0" prefWidth="600.0">
+         <children>
+            <Label alignment="CENTER" prefHeight="35.0" styleClass="label-header" text="客户端参数配置">
+               <font>
+                  <Font name="Microsoft YaHei Bold" size="25.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </VBox.margin>
+            </Label>
+            <ScrollPane hbarPolicy="NEVER" prefHeight="422.0" prefWidth="600.0" vbarPolicy="ALWAYS">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefWidth="600.0" styleClass="background">
+                     <children>
+                        <VBox alignment="CENTER" prefHeight="565.0" prefWidth="600.0">
+                           <children>
+                              <AnchorPane prefHeight="30.0" prefWidth="600.0">
+                                 <children>
+                                    <Label alignment="CENTER_RIGHT" prefWidth="235.0" text="address：">
+                                       <padding>
+                                          <Insets right="10.0" />
+                                       </padding>
+                                    </Label>
+                                    <TextField fx:id="address" layoutX="234.0" layoutY="-1.0" prefHeight="20.0" prefWidth="250.0" promptText="opc.tcp://10.28.213.213:4840" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" top="5.0" />
+                                 </VBox.margin>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="30.0" prefWidth="600.0">
+                                 <children>
+                                    <Label alignment="CENTER_RIGHT" prefWidth="235.0" text="plcNo：">
+                                       <padding>
+                                          <Insets right="10.0" />
+                                       </padding>
+                                    </Label>
+                                    <TextField fx:id="plcNo" layoutX="234.0" layoutY="-1.0" prefHeight="20.0" prefWidth="250.0" promptText="plc编号" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" top="5.0" />
+                                 </VBox.margin>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="30.0" prefWidth="600.0">
+                                 <children>
+                                    <Label alignment="CENTER_RIGHT" prefWidth="235.0" text="ns：">
+                                       <padding>
+                                          <Insets right="10.0" />
+                                       </padding>
+                                    </Label>
+                                    <TextField fx:id="ns" layoutX="234.0" layoutY="-1.0" prefHeight="20.0" prefWidth="250.0" promptText="namespaceIndex" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" top="5.0" />
+                                 </VBox.margin>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="30.0" prefWidth="600.0">
+                                 <children>
+                                    <Label alignment="CENTER_RIGHT" prefWidth="235.0" text="securityMode：">
+                                       <padding>
+                                          <Insets right="10.0" />
+                                       </padding>
+                                    </Label>
+                                    <ChoiceBox fx:id="securityMode" layoutX="234.0" layoutY="1.0" prefHeight="20.0" prefWidth="250.0">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </ChoiceBox>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" top="5.0" />
+                                 </VBox.margin>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="30.0" prefWidth="600.0">
+                                 <children>
+                                    <Label alignment="CENTER_RIGHT" prefWidth="235.0" text="userAuthenticationMode：">
+                                       <padding>
+                                          <Insets right="10.0" />
+                                       </padding>
+                                    </Label>
+                                    <ChoiceBox fx:id="userAuthenticationMode" layoutX="234.0" layoutY="-1.0" prefHeight="20.0" prefWidth="250.0">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </ChoiceBox>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" top="5.0" />
+                                 </VBox.margin>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="30.0" prefWidth="600.0">
+                                 <children>
+                                    <Label alignment="CENTER_RIGHT" prefWidth="235.0" text="username：">
+                                       <padding>
+                                          <Insets right="10.0" />
+                                       </padding>
+                                    </Label>
+                                    <TextField fx:id="username" disable="true" layoutX="234.0" layoutY="-1.0" prefHeight="20.0" prefWidth="250.0" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" top="5.0" />
+                                 </VBox.margin>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="30.0" prefWidth="600.0">
+                                 <children>
+                                    <Label alignment="CENTER_RIGHT" prefWidth="235.0" text="password：">
+                                       <padding>
+                                          <Insets right="10.0" />
+                                       </padding>
+                                    </Label>
+                                    <TextField fx:id="password" disable="true" layoutX="234.0" layoutY="1.0" prefHeight="20.0" prefWidth="250.0" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" top="5.0" />
+                                 </VBox.margin>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="30.0" prefWidth="600.0">
+                                 <children>
+                                    <Label alignment="CENTER_RIGHT" prefWidth="235.0" text="clientListener：">
+                                       <padding>
+                                          <Insets right="10.0" />
+                                       </padding>
+                                    </Label>
+                                    <TextField fx:id="clientListener" layoutX="234.0" layoutY="-1.0" prefHeight="20.0" prefWidth="250.0" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" top="5.0" />
+                                 </VBox.margin>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="30.0" prefWidth="600.0">
+                                 <children>
+                                    <Label alignment="CENTER_RIGHT" prefWidth="235.0" text="sessionTimeOut：">
+                                       <padding>
+                                          <Insets right="10.0" />
+                                       </padding>
+                                    </Label>
+                                    <TextField fx:id="sessionTimeOut" layoutX="234.0" layoutY="1.0" prefHeight="20.0" prefWidth="250.0" promptText="天" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" top="5.0" />
+                                 </VBox.margin>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="30.0" prefWidth="600.0">
+                                 <children>
+                                    <Label alignment="CENTER_RIGHT" prefWidth="235.0" text="isConnect：">
+                                       <padding>
+                                          <Insets right="10.0" />
+                                       </padding>
+                                    </Label>
+                                    <Group>
+                                       <children>
+                                          <RadioButton fx:id="connect" layoutX="234.0" layoutY="6.0" mnemonicParsing="false" prefHeight="20.0" selected="true" text="true">
+                                             <font>
+                                                <Font name="Microsoft YaHei" size="15.0" />
+                                             </font></RadioButton>
+                                          <RadioButton fx:id="unconnect" layoutX="351.0" layoutY="4.0" mnemonicParsing="false" prefHeight="20.0" text="false">
+                                             <font>
+                                                <Font name="Microsoft YaHei" size="15.0" />
+                                             </font></RadioButton>
+                                       </children>
+                                    </Group>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" top="5.0" />
+                                 </VBox.margin>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="30.0" prefWidth="600.0">
+                                 <children>
+                                    <Label alignment="CENTER_RIGHT" prefWidth="235.0" text="isSubscribe：">
+                                       <padding>
+                                          <Insets right="10.0" />
+                                       </padding>
+                                    </Label>
+                                    <Group>
+                                       <children>
+                                          <RadioButton fx:id="subscribe" layoutX="234.0" layoutY="4.0" mnemonicParsing="false" prefHeight="20.0" selected="true" text="true">
+                                             <font>
+                                                <Font name="Microsoft YaHei" size="15.0" />
+                                             </font></RadioButton>
+                                          <RadioButton fx:id="unsubscribe" layoutX="351.0" layoutY="4.0" mnemonicParsing="false" prefHeight="20.0" text="false">
+                                             <font>
+                                                <Font name="Microsoft YaHei" size="15.0" />
+                                             </font></RadioButton>
+                                       </children>
+                                    </Group>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" top="5.0" />
+                                 </VBox.margin>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="31.0" prefWidth="600.0">
+                                 <children>
+                                    <Button fx:id="addOne" contentDisplay="CENTER" layoutX="236.0" layoutY="6.0" mnemonicParsing="false" onAction="#addOneListener" text="添加监听器">
+                                       <font>
+                                          <Font name="Microsoft YaHei" size="12.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" top="5.0" />
+                                 </VBox.margin>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="35.0" prefWidth="600.0">
+                                 <children>
+                                    <Button fx:id="save" contentDisplay="CENTER" defaultButton="true" layoutX="250.0" layoutY="4.0" mnemonicParsing="false" onAction="#saveDetailDeploy" text="保存" />
+                                    <Button fx:id="next" contentDisplay="CENTER" disable="true" layoutX="317.0" layoutY="4.0" mnemonicParsing="false" onAction="#nextDetailDeploy" prefHeight="30.0" prefWidth="100.0" text="下一个">
+                                       <font>
+                                          <Font name="Microsoft YaHei Bold" size="15.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="complete" contentDisplay="CENTER" disable="true" layoutX="450.0" layoutY="5.0" mnemonicParsing="false" onAction="#completeDeploy" prefHeight="30.0" text="完成">
+                                       <font>
+                                          <Font name="Microsoft YaHei Bold" size="15.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" top="5.0" />
+                                 </VBox.margin>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="30.0" prefWidth="600.0">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" top="5.0" />
+                                 </VBox.margin>
+                              </AnchorPane>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </ScrollPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

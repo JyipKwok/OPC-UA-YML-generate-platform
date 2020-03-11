@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="600.0" styleClass="background" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.shdq.OPCUA_YML_gen_platform.controller.CommonDeployController">
+   <children>
+      <VBox alignment="TOP_CENTER" prefHeight="500.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label alignment="CENTER" prefHeight="30.0" styleClass="label-header" text="通用项配置">
+               <font>
+                  <Font name="Microsoft YaHei Bold" size="25.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="30.0" top="10.0" />
+               </VBox.margin>
+            </Label>
+            <AnchorPane prefWidth="600.0">
+               <children>
+                  <HBox prefHeight="70.0" prefWidth="600.0">
+                     <children>
+                        <Label text="                         listenerPath：">
+                           <HBox.margin>
+                              <Insets right="30.0" top="25.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="listenerPath" onKeyTyped="#handleListenerPathOnInputTextChange" promptText="com.xx.xxlistener.">
+                           <HBox.margin>
+                              <Insets top="20.0" />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefWidth="600.0">
+               <children>
+                  <HBox prefHeight="70.0" prefWidth="600.0">
+                     <children>
+                        <Label text="                        nodesParser：">
+                           <HBox.margin>
+                              <Insets right="30.0" top="25.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="nodesParser" onKeyTyped="#handleNodesParserOnInputTextChange" promptText="com.xx.xx.MyParser">
+                           <HBox.margin>
+                              <Insets top="20.0" />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefWidth="600.0">
+               <children>
+                  <VBox prefHeight="80.0" prefWidth="600.0">
+                     <children>
+                        <TextArea disable="true" editable="false" opacity="0.99" prefHeight="38.0" prefWidth="500.0" text="每隔publishRate毫秒客户端会给所有订阅的节点发送一次publishRequest请求，对应每一个请求返回&#10;一个publishResponse响应。如果服务端中节点的刷新速率小于publishRate，会发生漏读的现象。">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="20.0" right="20.0" />
+                           </VBox.margin>
+                        </TextArea>
+                        <HBox prefHeight="38.0" prefWidth="600.0">
+                           <children>
+                              <Label text="                         publishRate：">
+                                 <HBox.margin>
+                                    <Insets right="30.0" top="10.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="publishRate" onKeyTyped="#handlePublishRateOnInputTextChange" promptText="毫秒">
+                                 <HBox.margin>
+                                    <Insets top="5.0" />
+                                 </HBox.margin>
+                              </TextField>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </AnchorPane>
+            <AnchorPane prefWidth="600.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="114.0" prefWidth="600.0">
+                     <children>
+                        <Label id="label-text" text="根据服务端完成客户端配置">
+                           <font>
+                              <Font name="Microsoft YaHei" size="11.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Label>
+                        <Button fx:id="complete" disable="true" mnemonicParsing="false" onAction="#handleCommonDeployComplete" text="下一步">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+               </children>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

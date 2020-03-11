@@ -1,0 +1,194 @@
+2020-03-10 09:48:38,573 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 09:48:54,380 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 10:19:54,668 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 10:22:33,181 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 10:22:43,127 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 10:24:16,040 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 10:24:25,438 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 10:24:52,972 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 10:25:00,878 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 10:25:24,496 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 10:25:29,833 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 10:25:39,419 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 10:25:45,994 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 10:26:02,704 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 10:26:11,017 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 10:26:15,111 DEBUG [JavaFX Application Thread] (ShowListenerPairController.java:170) - OpcUaProperties(listenerPath=qwe., nodesParser=qwe, publishRate=1, plcList=[{address=123, ns=1, isConnect=true, securityMode=none, isSubscribe=true, userAuthenticationMode=anonymous, 123=123, plcNo=1, clientListener=com.opc.uaclient.uaclientlistener.MyUaClientListener, wer1111=wer, sessionTimeOut=1}])
+ 2020-03-10 10:26:17,467 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 10:26:24,877 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 10:26:27,486 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 10:26:35,426 DEBUG [JavaFX Application Thread] (ShowListenerPairController.java:170) - OpcUaProperties(listenerPath=wer., nodesParser=wer, publishRate=1, plcList=[{address=234, dfg=dfg, isConnect=false, ns=1, securityMode=none, isSubscribe=true, userAuthenticationMode=username, password=123, plcNo=2, clientListener=com.opc.uaclient.uaclientlistener.MyUaClientListener, 345=345, sessionTimeOut=1, username=123}])
+ 2020-03-10 10:26:47,812 DEBUG [JavaFX Application Thread] (CommonDeployOverviewController.java:75) - OpcUaProperties(listenerPath=wer., nodesParser=werrrrrrr, publishRate=1, plcList=[{address=234, dfg=dfg, isConnect=false, ns=1, securityMode=none, isSubscribe=true, userAuthenticationMode=username, password=123, plcNo=2, clientListener=com.opc.uaclient.uaclientlistener.MyUaClientListener, 345=345, sessionTimeOut=1, username=123}])
+ 2020-03-10 10:29:32,603 DEBUG [Thread-6] (MyTask.java:31) - task start
+ 2020-03-10 10:29:40,703 DEBUG [Thread-6] (MyTask.java:46) - task complete
+ 2020-03-10 10:29:42,069 DEBUG [Thread-7] (MyTask.java:31) - task start
+ 2020-03-10 10:29:50,271 DEBUG [Thread-7] (MyTask.java:46) - task complete
+ 2020-03-10 10:33:22,976 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 10:33:48,362 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 10:33:52,330 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 10:33:57,434 DEBUG [Thread-8] (MyTask.java:31) - task start
+ 2020-03-10 10:34:05,482 DEBUG [Thread-8] (MyTask.java:46) - task complete
+ 2020-03-10 10:41:11,909 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 10:47:20,644 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 10:47:25,528 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 10:47:28,502 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 10:48:27,184 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 10:48:38,716 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 10:49:20,700 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 10:49:28,338 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 10:49:49,574 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 10:51:23,607 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 10:51:36,783 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 10:51:40,815 DEBUG [Thread-6] (MyTask.java:31) - task start
+ 2020-03-10 10:51:48,881 DEBUG [Thread-6] (MyTask.java:46) - task complete
+ 2020-03-10 10:53:19,919 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 10:53:29,459 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 10:53:33,674 DEBUG [Thread-6] (MyTask.java:31) - task start
+ 2020-03-10 10:53:41,749 DEBUG [Thread-6] (MyTask.java:46) - task complete
+ 2020-03-10 10:53:56,507 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 10:54:04,453 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 10:54:07,858 DEBUG [Thread-7] (MyTask.java:31) - task start
+ 2020-03-10 10:54:15,908 DEBUG [Thread-7] (MyTask.java:46) - task complete
+ 2020-03-10 10:58:51,305 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 10:59:41,946 DEBUG [Thread-8] (MyTask.java:31) - task start
+ 2020-03-10 10:59:50,011 DEBUG [Thread-8] (MyTask.java:46) - task complete
+ 2020-03-10 11:05:02,110 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DARK
+ 2020-03-10 11:05:08,515 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DARK
+ 2020-03-10 11:05:23,294 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 11:06:01,757 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 11:09:45,887 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 11:09:49,595 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 11:09:52,021 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 11:09:59,770 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DARK
+ 2020-03-10 11:11:49,232 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DARK
+ 2020-03-10 11:11:54,253 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DARK
+ 2020-03-10 11:11:55,586 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DARK
+ 2020-03-10 11:12:00,942 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 11:12:00,977 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 11:12:01,013 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 11:28:37,788 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 11:28:40,203 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 11:28:42,855 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 11:28:44,580 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 11:28:46,365 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 11:28:48,553 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 11:28:51,519 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 11:28:55,044 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 11:28:56,692 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 11:29:13,477 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 11:29:19,773 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 11:29:22,294 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 11:29:27,536 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 11:29:29,377 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 11:29:31,076 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 11:30:03,823 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 11:30:16,426 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 11:30:26,185 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 11:30:33,008 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 11:38:04,871 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 11:38:07,118 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 11:38:09,222 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 12:11:14,513 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 12:11:16,424 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 12:11:18,244 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 12:11:20,030 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 12:11:22,159 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 12:11:24,001 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 12:11:29,883 DEBUG [JavaFX Application Thread] (MainApp.java:69) - on primaryStage close
+ 2020-03-10 12:11:31,858 DEBUG [JavaFX Application Thread] (MainApp.java:69) - on primaryStage close
+ 2020-03-10 12:11:32,842 DEBUG [JavaFX Application Thread] (MainApp.java:69) - on primaryStage close
+ 2020-03-10 12:11:33,472 DEBUG [JavaFX Application Thread] (MainApp.java:69) - on primaryStage close
+ 2020-03-10 12:11:35,289 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 12:11:37,060 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 12:11:38,345 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 12:11:39,562 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 12:11:40,422 DEBUG [JavaFX Application Thread] (MainApp.java:69) - on primaryStage close
+ 2020-03-10 12:11:40,826 DEBUG [JavaFX Application Thread] (MainApp.java:69) - on primaryStage close
+ 2020-03-10 12:11:41,206 DEBUG [JavaFX Application Thread] (MainApp.java:69) - on primaryStage close
+ 2020-03-10 12:11:41,670 DEBUG [JavaFX Application Thread] (MainApp.java:69) - on primaryStage close
+ 2020-03-10 12:11:42,356 DEBUG [JavaFX Application Thread] (MainApp.java:69) - on primaryStage close
+ 2020-03-10 12:38:08,103 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 12:39:23,210 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 12:39:45,871 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 12:40:35,504 DEBUG [JavaFX Application Thread] (MainApp.java:69) - on primaryStage close
+ 2020-03-10 12:40:40,061 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 12:50:52,375 DEBUG [JavaFX Application Thread] (MainApp.java:69) - on primaryStage close
+ 2020-03-10 12:51:00,108 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 12:51:11,116 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 12:52:38,000 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 12:52:45,340 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 12:52:49,379 DEBUG [JavaFX Application Thread] (MainApp.java:67) - on primaryStage close
+ 2020-03-10 12:52:50,636 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 12:53:01,010 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DARK
+ 2020-03-10 12:53:01,094 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DARK
+ 2020-03-10 12:53:01,141 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DARK
+ 2020-03-10 12:53:01,181 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DARK
+ 2020-03-10 12:53:28,230 DEBUG [Thread-6] (MyTask.java:31) - task start
+ 2020-03-10 12:53:36,329 DEBUG [Thread-6] (MyTask.java:46) - task complete
+ 2020-03-10 12:55:56,677 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DARK
+ 2020-03-10 12:56:00,068 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DARK
+ 2020-03-10 12:56:01,845 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DARK
+ 2020-03-10 12:56:03,218 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DARK
+ 2020-03-10 12:56:04,497 DEBUG [JavaFX Application Thread] (MainApp.java:67) - on primaryStage close
+ 2020-03-10 12:56:10,624 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 12:56:10,659 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 12:56:10,687 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 12:57:49,781 DEBUG [JavaFX Application Thread] (MainApp.java:67) - on primaryStage close
+ 2020-03-10 12:58:00,308 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 12:58:10,140 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 12:58:33,381 DEBUG [JavaFX Application Thread] (MainApp.java:67) - on primaryStage close
+ 2020-03-10 12:59:11,087 DEBUG [JavaFX Application Thread] (MainApp.java:67) - on primaryStage close
+ 2020-03-10 12:59:11,919 DEBUG [JavaFX Application Thread] (MainApp.java:67) - on primaryStage close
+ 2020-03-10 13:00:54,445 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 13:01:06,499 DEBUG [Thread-6] (MyTask.java:31) - task start
+ 2020-03-10 13:01:14,567 DEBUG [Thread-6] (MyTask.java:46) - task complete
+ 2020-03-10 13:29:48,226 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 13:30:04,198 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 13:30:46,243 DEBUG [Thread-7] (MyTask.java:31) - task start
+ 2020-03-10 13:30:54,293 DEBUG [Thread-7] (MyTask.java:46) - task complete
+ 2020-03-10 13:40:37,750 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 13:40:47,152 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 13:41:06,451 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 13:41:28,546 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 13:41:36,583 DEBUG [Thread-6] (MyTask.java:31) - task start
+ 2020-03-10 13:41:37,295 DEBUG [Thread-7] (MyTask.java:31) - task start
+ 2020-03-10 13:41:44,684 DEBUG [Thread-6] (MyTask.java:46) - task complete
+ 2020-03-10 13:41:45,352 DEBUG [Thread-7] (MyTask.java:46) - task complete
+ 2020-03-10 14:16:44,803 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 14:17:24,052 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 14:17:26,275 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 14:17:39,063 DEBUG [JavaFX Application Thread] (BuildProfileController.java:46) - com.shdq.OPCUA_YML_gen_platform.controller.BuildProfileController@6e399230
+ 2020-03-10 14:17:57,339 DEBUG [JavaFX Application Thread] (BuildProfileController.java:46) - com.shdq.OPCUA_YML_gen_platform.controller.BuildProfileController@1044aa8
+ 2020-03-10 15:17:28,218 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 15:17:38,569 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 15:18:02,875 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 15:18:11,709 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 15:18:26,574 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 15:18:39,049 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 15:19:15,056 DEBUG [Thread-6] (MyTask.java:31) - task start
+ 2020-03-10 15:19:15,858 DEBUG [Thread-7] (MyTask.java:31) - task start
+ 2020-03-10 15:19:23,129 DEBUG [Thread-6] (MyTask.java:46) - task complete
+ 2020-03-10 15:19:23,913 DEBUG [Thread-7] (MyTask.java:46) - task complete
+ 2020-03-10 15:23:00,168 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 15:23:03,343 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 15:23:15,292 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 15:23:28,918 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 15:23:36,914 DEBUG [Thread-6] (MyTask.java:31) - task start
+ 2020-03-10 15:23:37,598 DEBUG [Thread-7] (MyTask.java:31) - task start
+ 2020-03-10 15:23:44,989 DEBUG [Thread-6] (MyTask.java:46) - task complete
+ 2020-03-10 15:23:45,653 DEBUG [Thread-7] (MyTask.java:46) - task complete
+ 2020-03-10 16:15:34,808 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 16:15:39,021 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 16:15:40,651 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 16:15:41,899 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 16:15:43,207 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 16:15:45,207 DEBUG [JavaFX Application Thread] (MainApp.java:65) - on primaryStage close
+ 2020-03-10 16:15:45,635 DEBUG [JavaFX Application Thread] (MainApp.java:65) - on primaryStage close
+ 2020-03-10 16:15:46,024 DEBUG [JavaFX Application Thread] (MainApp.java:65) - on primaryStage close
+ 2020-03-10 16:16:02,797 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 16:16:45,111 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 16:23:35,017 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 16:23:50,223 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 16:23:59,677 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 2020-03-10 16:24:01,388 DEBUG [JavaFX Application Thread] (ThemeUtil.java:28) - current theme:DEFAULT
+ 

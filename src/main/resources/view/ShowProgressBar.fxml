@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="100.0" prefWidth="300.0" styleClass="background" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.shdq.OPCUA_YML_gen_platform.controller.ShowProgressBarController">
+   <children>
+      <VBox alignment="CENTER" prefHeight="100.0" prefWidth="300.0">
+         <children>
+            <ProgressBar fx:id="progressBar" prefWidth="200.0" progress="0.0">
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </ProgressBar>
+            <Label fx:id="progressMsg" styleClass="label-bright" text="Label">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Label>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

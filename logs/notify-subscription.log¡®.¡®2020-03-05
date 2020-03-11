@@ -1,0 +1,26 @@
+2020-03-05 10:54:20,446 DEBUG [Thread-6] (MyTask.java:32) - task start
+ 2020-03-05 10:54:28,544 DEBUG [Thread-6] (MyTask.java:47) - task complete
+ 2020-03-05 14:13:25,029 DEBUG [JavaFX Application Thread] (MainApp.java:79) - /css/DarkTheme.css
+ 2020-03-05 14:14:08,390 DEBUG [JavaFX Application Thread] (MainApp.java:79) - /css/DarkTheme.css
+ 2020-03-05 14:14:31,191 DEBUG [JavaFX Application Thread] (MainApp.java:79) - class com.shdq.OPCUA_YML_gen_platform.MainApp
+ 2020-03-05 14:15:05,294 DEBUG [JavaFX Application Thread] (MainApp.java:79) - null
+ 2020-03-05 14:17:29,648 DEBUG [JavaFX Application Thread] (MainApp.java:79) - /css/DarkTheme.css
+ 2020-03-05 14:17:29,651 DEBUG [JavaFX Application Thread] (MainApp.java:80) - null
+ 2020-03-05 14:21:05,046 DEBUG [JavaFX Application Thread] (MainApp.java:79) - /css/DarkTheme.css
+ 2020-03-05 14:21:05,048 DEBUG [JavaFX Application Thread] (MainApp.java:80) - null
+ 2020-03-05 14:30:10,332 DEBUG [JavaFX Application Thread] (MainApp.java:74) - null
+ 2020-03-05 14:30:44,846 DEBUG [JavaFX Application Thread] (MainApp.java:74) - null
+ 2020-03-05 14:30:44,847 DEBUG [JavaFX Application Thread] (MainApp.java:75) - file:/C:/project/mine/OPCUA-YML-Generate-platform/target/classes/view/RootLayout.fxml
+ 2020-03-05 14:31:19,687 DEBUG [JavaFX Application Thread] (MainApp.java:74) - null
+ 2020-03-05 14:31:19,689 DEBUG [JavaFX Application Thread] (MainApp.java:75) - file:/C:/project/mine/OPCUA-YML-Generate-platform/target/classes/view/RootLayout.fxml
+ 2020-03-05 14:35:40,215 DEBUG [JavaFX Application Thread] (MainApp.java:74) - null
+ 2020-03-05 14:35:40,217 DEBUG [JavaFX Application Thread] (MainApp.java:75) - file:/C:/project/mine/OPCUA-YML-Generate-platform/target/classes/view/RootLayout.fxml
+ 2020-03-05 14:37:59,030 DEBUG [JavaFX Application Thread] (MainApp.java:74) - null
+ 2020-03-05 14:37:59,032 DEBUG [JavaFX Application Thread] (MainApp.java:75) - file:/C:/project/mine/OPCUA-YML-Generate-platform/target/classes/view/RootLayout.fxml
+ 2020-03-05 14:38:39,640 DEBUG [JavaFX Application Thread] (MainApp.java:74) - file:/C:/project/mine/OPCUA-YML-Generate-platform/target/classes/css/root.css
+ 2020-03-05 14:38:39,642 DEBUG [JavaFX Application Thread] (MainApp.java:75) - file:/C:/project/mine/OPCUA-YML-Generate-platform/target/classes/view/RootLayout.fxml
+ 2020-03-05 14:39:38,541 DEBUG [JavaFX Application Thread] (MainApp.java:74) - file:/C:/project/mine/OPCUA-YML-Generate-platform/target/classes/css/darkTheme.css
+ 2020-03-05 14:39:38,543 DEBUG [JavaFX Application Thread] (MainApp.java:75) - file:/C:/project/mine/OPCUA-YML-Generate-platform/target/classes/view/RootLayout.fxml
+ 2020-03-05 15:42:26,619 DEBUG [Thread-6] (MyTask.java:32) - task start
+ 2020-03-05 15:42:34,702 DEBUG [Thread-6] (MyTask.java:47) - task complete
+ 

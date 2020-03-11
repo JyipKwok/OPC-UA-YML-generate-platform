@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="600.0" styleClass="background" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.shdq.OPCUA_YML_gen_platform.controller.RootLayoutController">
+   <top>
+      <MenuBar prefHeight="35.0" BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="文件">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#handleNew" text="新建窗口" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem fx:id="save" disable="true" mnemonicParsing="false" onAction="#handleSave" text="保存" />
+                  <MenuItem fx:id="saveAs" disable="true" mnemonicParsing="false" onAction="#handleSaveAs" text="另存为" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleOpenFile" text="打开文件" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleExit" text="退出" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="设置">
+              <items>
+              <MenuItem mnemonicParsing="false" onAction="#handleDefaultFilePath" text="设置文件保存路径" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <Menu mnemonicParsing="false" text="主题">
+                     <items>
+                        <CheckMenuItem fx:id="defaultTheme" mnemonicParsing="false" onAction="#handleDefaultTheme" text="默认" />
+                        <CheckMenuItem fx:id="darkTheme" mnemonicParsing="false" onAction="#handleDarkTheme" text="暗黑" />
+                        <CheckMenuItem fx:id="whiteTheme" mnemonicParsing="false" onAction="#handleWhiteTheme" text="纯白" />
+                     </items>
+                  </Menu>
+              </items>
+            </Menu>
+          <Menu mnemonicParsing="false" text="帮助">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#handleHistoryRecord" text="历史记录" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <Menu mnemonicParsing="false" text="关于">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#handleAboutApplication" text="应用程序" />
+                      <MenuItem mnemonicParsing="false" onAction="#handleAboutAuthor" text="作者" />
+                    </items>
+                  </Menu>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleFeedback" text="反馈" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+</BorderPane>
