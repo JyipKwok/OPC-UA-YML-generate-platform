@@ -1,14 +1,21 @@
 package com.shdq.OPCUA_YML_gen_platform.controller;
 
 import com.shdq.OPCUA_YML_gen_platform.MainApp;
+import com.shdq.OPCUA_YML_gen_platform.animation.MyAnimation;
 import com.shdq.OPCUA_YML_gen_platform.model.OpcUaProperties;
 import com.shdq.OPCUA_YML_gen_platform.util.WrongMsg;
+import javafx.animation.ParallelTransition;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
+
+import java.util.Arrays;
+import java.util.List;
 
 @Slf4j
 public class CommonDeployOverviewController {
@@ -29,6 +36,13 @@ public class CommonDeployOverviewController {
     @FXML
     private Button save;
 
+    @FXML
+    private Label listenerPathLabel;
+    @FXML
+    private Label nodesParserLabel;
+    @FXML
+    private Label publishRateLabel;
+
     public void setMainApp(MainApp mainApp) {
         this.mainApp = mainApp;
         properties = OpcUaProperties.getProperties(this.mainApp);
@@ -39,7 +53,21 @@ public class CommonDeployOverviewController {
 
     @FXML
     private void initialize(){
+//        playEffects();
+    }
 
+    private void playEffects() {
+        List<Node> nodes = Arrays.asList(listenerPath,nodesParser,publishRate);
+        List<Label> labels = Arrays.asList(listenerPathLabel,nodesParserLabel,publishRateLabel);
+        List<ParallelTransition> parallelTransitions = MyAnimation.commonPageEffectsPlay(nodes,labels);
+        parallelTransitions.forEach(parallelTransition -> {
+            parallelTransition.play();
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        });
     }
 
     @FXML

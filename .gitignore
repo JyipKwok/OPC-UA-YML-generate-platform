@@ -1,3 +1,4 @@
+#idea中使用.gitignore方法：https://blog.csdn.net/lk142500/article/details/82869018
 # Created by .ignore support plugin (hsz.mobi)
 ### Java template
 # Compiled class file
@@ -6,6 +7,8 @@
 # Log file
 *.log
 logs/
+#test file
+src/test
 
 # BlueJ files
 *.ctxt

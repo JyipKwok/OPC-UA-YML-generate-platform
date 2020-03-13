@@ -1,15 +1,18 @@
 package com.shdq.OPCUA_YML_gen_platform.controller;
 
 import com.shdq.OPCUA_YML_gen_platform.MainApp;
+import com.shdq.OPCUA_YML_gen_platform.animation.MyAnimation;
 import com.shdq.OPCUA_YML_gen_platform.model.ListenerPair;
 import com.shdq.OPCUA_YML_gen_platform.util.CommonUtil;
 import com.shdq.OPCUA_YML_gen_platform.util.ThemeUtil;
 import com.shdq.OPCUA_YML_gen_platform.util.WrongMsg;
+import javafx.animation.ParallelTransition;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
@@ -63,6 +66,28 @@ public class DetailDeployOverviewController {
     @FXML
     private Button save;
 
+    @FXML
+    private Label addressLabel;
+    @FXML
+    private Label plcNoLabel;
+    @FXML
+    private Label nsLabel;
+    @FXML
+    private Label securityModeLabel;
+    @FXML
+    private Label userAuthenticationModeLabel;
+    @FXML
+    private Label usernameLabel;
+    @FXML
+    private Label passwordLabel;
+    @FXML
+    private Label sessionTimeOutLabel;
+    @FXML
+    private Label clientListenerLabel;
+    @FXML
+    private Label isConnectLabel;
+    @FXML
+    private Label isSubscribeLabel;
     private ToggleGroup isConnect;
     private ToggleGroup isSubscribe;
 
@@ -71,6 +96,7 @@ public class DetailDeployOverviewController {
     private boolean noError = true;
     @FXML
     private void initialize(){
+//        playEffects();
         address.setTooltip(new Tooltip("客户端连接服务端地址，支持opc和http。"));
         plcNo.setTooltip(new Tooltip("正整数，并且不能重复。"));
         ns.setTooltip(new Tooltip("根据opc服务端配置。"));
@@ -118,6 +144,22 @@ public class DetailDeployOverviewController {
         unsubscribe.setToggleGroup(isSubscribe);
         isSubscribe.selectedToggleProperty().addListener((observable, oldValue, newValue) ->
                 plcDetailDeployMap.put("isSubscribe",isSubscribe.getSelectedToggle().getUserData().toString()));
+    }
+
+    private void playEffects() {
+        List<Node> nodes = Arrays.asList(address,plcNo,ns,securityMode,userAuthenticationMode,username,password,clientListener,sessionTimeOut,
+                connect,unconnect,subscribe,unsubscribe);
+        List<Label> labels = Arrays.asList(addressLabel,plcNoLabel,nsLabel,securityModeLabel,userAuthenticationModeLabel,usernameLabel,passwordLabel,clientListenerLabel,sessionTimeOutLabel,
+                isConnectLabel,isSubscribeLabel);
+        List<ParallelTransition> parallelTransitions = MyAnimation.detailPageEffectsPlay(nodes,labels);
+        parallelTransitions.forEach(parallelTransition -> {
+            parallelTransition.play();
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        });
     }
 
     public void setPlcDetailDeployMap(Map<String, String> plcDetailDeployMap) {

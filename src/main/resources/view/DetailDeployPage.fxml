@@ -28,7 +28,7 @@
                            <children>
                               <AnchorPane prefHeight="30.0" prefWidth="600.0">
                                  <children>
-                                    <Label alignment="CENTER_RIGHT" prefWidth="235.0" text="address：">
+                                    <Label fx:id="addressLabel" alignment="CENTER_RIGHT" prefWidth="235.0" text="address：">
                                        <padding>
                                           <Insets right="10.0" />
                                        </padding>
@@ -41,7 +41,7 @@
                               </AnchorPane>
                               <AnchorPane prefHeight="30.0" prefWidth="600.0">
                                  <children>
-                                    <Label alignment="CENTER_RIGHT" prefWidth="235.0" text="plcNo：">
+                                    <Label fx:id="plcNoLabel" alignment="CENTER_RIGHT" prefWidth="235.0" text="plcNo：">
                                        <padding>
                                           <Insets right="10.0" />
                                        </padding>
@@ -54,7 +54,7 @@
                               </AnchorPane>
                               <AnchorPane prefHeight="30.0" prefWidth="600.0">
                                  <children>
-                                    <Label alignment="CENTER_RIGHT" prefWidth="235.0" text="ns：">
+                                    <Label fx:id="nsLabel" alignment="CENTER_RIGHT" prefWidth="235.0" text="ns：">
                                        <padding>
                                           <Insets right="10.0" />
                                        </padding>
@@ -67,7 +67,7 @@
                               </AnchorPane>
                               <AnchorPane prefHeight="30.0" prefWidth="600.0">
                                  <children>
-                                    <Label alignment="CENTER_RIGHT" prefWidth="235.0" text="securityMode：">
+                                    <Label fx:id="securityModeLabel" alignment="CENTER_RIGHT" prefWidth="235.0" text="securityMode：">
                                        <padding>
                                           <Insets right="10.0" />
                                        </padding>
@@ -84,7 +84,7 @@
                               </AnchorPane>
                               <AnchorPane prefHeight="30.0" prefWidth="600.0">
                                  <children>
-                                    <Label alignment="CENTER_RIGHT" prefWidth="235.0" text="userAuthenticationMode：">
+                                    <Label fx:id="userAuthenticationModeLabel" alignment="CENTER_RIGHT" prefWidth="235.0" text="userAuthenticationMode：">
                                        <padding>
                                           <Insets right="10.0" />
                                        </padding>
@@ -101,7 +101,7 @@
                               </AnchorPane>
                               <AnchorPane prefHeight="30.0" prefWidth="600.0">
                                  <children>
-                                    <Label alignment="CENTER_RIGHT" prefWidth="235.0" text="username：">
+                                    <Label fx:id="usernameLabel" alignment="CENTER_RIGHT" prefWidth="235.0" text="username：">
                                        <padding>
                                           <Insets right="10.0" />
                                        </padding>
@@ -114,7 +114,7 @@
                               </AnchorPane>
                               <AnchorPane prefHeight="30.0" prefWidth="600.0">
                                  <children>
-                                    <Label alignment="CENTER_RIGHT" prefWidth="235.0" text="password：">
+                                    <Label fx:id="passwordLabel" alignment="CENTER_RIGHT" prefWidth="235.0" text="password：">
                                        <padding>
                                           <Insets right="10.0" />
                                        </padding>
@@ -127,7 +127,7 @@
                               </AnchorPane>
                               <AnchorPane prefHeight="30.0" prefWidth="600.0">
                                  <children>
-                                    <Label alignment="CENTER_RIGHT" prefWidth="235.0" text="clientListener：">
+                                    <Label fx:id="clientListenerLabel" alignment="CENTER_RIGHT" prefWidth="235.0" text="clientListener：">
                                        <padding>
                                           <Insets right="10.0" />
                                        </padding>
@@ -140,7 +140,7 @@
                               </AnchorPane>
                               <AnchorPane prefHeight="30.0" prefWidth="600.0">
                                  <children>
-                                    <Label alignment="CENTER_RIGHT" prefWidth="235.0" text="sessionTimeOut：">
+                                    <Label fx:id="sessionTimeOutLabel" alignment="CENTER_RIGHT" prefWidth="235.0" text="sessionTimeOut：">
                                        <padding>
                                           <Insets right="10.0" />
                                        </padding>
@@ -153,7 +153,7 @@
                               </AnchorPane>
                               <AnchorPane prefHeight="30.0" prefWidth="600.0">
                                  <children>
-                                    <Label alignment="CENTER_RIGHT" prefWidth="235.0" text="isConnect：">
+                                    <Label fx:id="isConnectLabel" alignment="CENTER_RIGHT" prefWidth="235.0" text="isConnect：">
                                        <padding>
                                           <Insets right="10.0" />
                                        </padding>
@@ -177,7 +177,7 @@
                               </AnchorPane>
                               <AnchorPane prefHeight="30.0" prefWidth="600.0">
                                  <children>
-                                    <Label alignment="CENTER_RIGHT" prefWidth="235.0" text="isSubscribe：">
+                                    <Label fx:id="isSubscribeLabel" alignment="CENTER_RIGHT" prefWidth="235.0" text="isSubscribe：">
                                        <padding>
                                           <Insets right="10.0" />
                                        </padding>

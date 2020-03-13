@@ -1,20 +1,22 @@
 package com.shdq.OPCUA_YML_gen_platform.controller;
 
 import com.shdq.OPCUA_YML_gen_platform.MainApp;
+import com.shdq.OPCUA_YML_gen_platform.animation.MyAnimation;
 import com.shdq.OPCUA_YML_gen_platform.model.OpcUaProperties;
 import com.shdq.OPCUA_YML_gen_platform.util.WrongMsg;
+import javafx.animation.ParallelTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
-import javafx.scene.control.Tooltip;
+import javafx.scene.Node;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import lombok.Setter;
 import org.apache.commons.lang.StringUtils;
 
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * @author shdq-fjy
@@ -44,10 +46,32 @@ public class CommonDeployController {
     private Button complete;
 
     @FXML
+    private Label listenerPathLabel;
+    @FXML
+    private Label nodesParserLabel;
+    @FXML
+    private Label publishRateLabel;
+
+    @FXML
     private void initialize(){
+        playEffects();
         listenerPath.setTooltip(new Tooltip("监听器类的包路径，最后以“.”结尾。"));
         nodesParser.setTooltip(new Tooltip("自定义节点解析器包名+类名，用于解析后续配置监听器和监听节点对中，对节点字符串的解析。"));
         publishRate.setTooltip(new Tooltip("监听器刷新率（推送响应速率）。"));
+    }
+
+    private void playEffects() {
+        List<Node> nodes = Arrays.asList(listenerPath,nodesParser,publishRate);
+        List<Label> labels = Arrays.asList(listenerPathLabel,nodesParserLabel,publishRateLabel);
+        List<ParallelTransition> parallelTransitions = MyAnimation.commonPageEffectsPlay(nodes,labels);
+        parallelTransitions.forEach(parallelTransition -> {
+            parallelTransition.play();
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        });
     }
 
     @FXML

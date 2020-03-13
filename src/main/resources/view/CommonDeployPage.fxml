@@ -25,7 +25,7 @@
                <children>
                   <HBox prefHeight="70.0" prefWidth="600.0">
                      <children>
-                        <Label text="                         listenerPath：">
+                        <Label fx:id="listenerPathLabel" text="                         listenerPath：">
                            <HBox.margin>
                               <Insets right="30.0" top="25.0" />
                            </HBox.margin>
@@ -43,7 +43,7 @@
                <children>
                   <HBox prefHeight="70.0" prefWidth="600.0">
                      <children>
-                        <Label text="                        nodesParser：">
+                        <Label fx:id="nodesParserLabel" text="                        nodesParser：">
                            <HBox.margin>
                               <Insets right="30.0" top="25.0" />
                            </HBox.margin>
@@ -71,7 +71,7 @@
                         </TextArea>
                         <HBox prefHeight="38.0" prefWidth="600.0">
                            <children>
-                              <Label text="                         publishRate：">
+                              <Label fx:id="publishRateLabel" text="                         publishRate：">
                                  <HBox.margin>
                                     <Insets right="30.0" top="10.0" />
                                  </HBox.margin>
