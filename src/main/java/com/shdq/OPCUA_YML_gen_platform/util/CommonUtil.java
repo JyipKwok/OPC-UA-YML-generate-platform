@@ -18,6 +18,8 @@ import java.util.prefs.Preferences;
  * @author shdq-fjy
  */
 public class CommonUtil {
+    public static final String BAT_FILE_PATH = "src/main/resources/newPreference.bat";
+    public static final String REG_FILE_PATH = "C:\\Program Files\\YAML-File-Generator\\prefs.reg";
     public volatile static boolean isOccupation = false;
     private static Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
     public static final List<String> notListenerNames = Arrays.asList(
@@ -69,13 +71,29 @@ public class CommonUtil {
     }
 
     public static String getDataFromPreferences(String key) {
-        Preferences prefs = Preferences.userNodeForPackage(MainApp.class);
+//        HKEY_CURRENT_USER\Software\JavaSoft\Prefs\com\shdq\/O/P/C/U/A_/Y/M/L_gen_platform
+        Preferences prefs;
+        try {
+            prefs = Preferences.userNodeForPackage(MainApp.class);
+        }catch (Exception e){
+            JavaCMDUtil.runBatWithoutCmd(BAT_FILE_PATH);
+            prefs = Preferences.userNodeForPackage(MainApp.class);
+        }
+
+//       HKEY_LOCAL_MACHINE\SOFTWARE\JavaSoft\Prefs\com\shdq\/O/P/C/U/A_/Y/M/L_gen_platform
+//        Preferences prefs = Preferences.systemNodeForPackage(MainApp.class);
         String value = prefs.get(key, null);
         return value;
     }
 
     public static void setDataToPreferences(String key, String value) {
-        Preferences prefs = Preferences.userNodeForPackage(MainApp.class);
+        Preferences prefs;
+        try {
+            prefs = Preferences.userNodeForPackage(MainApp.class);
+        }catch (Exception e){
+            JavaCMDUtil.runBatWithoutCmd(BAT_FILE_PATH);
+            prefs = Preferences.userNodeForPackage(MainApp.class);
+        }
         prefs.put(key, value);
     }
 

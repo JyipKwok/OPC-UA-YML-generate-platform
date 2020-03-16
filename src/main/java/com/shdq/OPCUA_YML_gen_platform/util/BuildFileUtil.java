@@ -69,7 +69,7 @@ public class BuildFileUtil {
         }
         log.debug(historyPath);
         if (exists){
-            OpcUaProperties propertiesOld = YamlConverter.getInstance().readFromYAMLFile(CommonUtil.default_file_path+ File.separator+CommonUtil.default_file_name+CommonUtil.default_file_suffix,OpcUaProperties.class);
+            OpcUaProperties propertiesOld = YamlConverter.getInstance().readFromYAMLFile(historyPath+ File.separator+CommonUtil.default_file_name+CommonUtil.default_file_suffix,OpcUaProperties.class);
             return buildYAMLFileInBackground(historyPath + File.separator+fileName,propertiesOld,true,mainApp);
         }else {
             return buildYAMLFileInBackground(historyPath + File.separator+fileName,properties,true,mainApp);
