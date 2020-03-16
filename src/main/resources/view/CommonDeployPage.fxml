@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.scene.paint.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.text.*?>
@@ -30,11 +31,16 @@
                               <Insets right="30.0" top="25.0" />
                            </HBox.margin>
                         </Label>
-                        <TextField fx:id="listenerPath" onKeyTyped="#handleListenerPathOnInputTextChange" promptText="com.xx.xxlistener.">
+                        <TextField fx:id="listenerPath" promptText="com.xx.xxlistener.">
                            <HBox.margin>
                               <Insets top="20.0" />
                            </HBox.margin>
                         </TextField>
+                        <ImageView fx:id="listenerPathPoint" disable="true" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                           <HBox.margin>
+                              <Insets left="10.0" top="25.0" />
+                           </HBox.margin>
+                        </ImageView>
                      </children>
                   </HBox>
                </children>
@@ -48,11 +54,16 @@
                               <Insets right="30.0" top="25.0" />
                            </HBox.margin>
                         </Label>
-                        <TextField fx:id="nodesParser" onKeyTyped="#handleNodesParserOnInputTextChange" promptText="com.xx.xx.MyParser">
+                        <TextField fx:id="nodesParser" promptText="com.xx.xx.MyParser">
                            <HBox.margin>
                               <Insets top="20.0" />
                            </HBox.margin>
                         </TextField>
+                        <ImageView fx:id="nodesParserPoint" disable="true" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                           <HBox.margin>
+                              <Insets left="10.0" top="25.0" />
+                           </HBox.margin>
+                        </ImageView>
                      </children>
                   </HBox>
                </children>
@@ -76,11 +87,16 @@
                                     <Insets right="30.0" top="10.0" />
                                  </HBox.margin>
                               </Label>
-                              <TextField fx:id="publishRate" onKeyTyped="#handlePublishRateOnInputTextChange" promptText="毫秒">
+                              <TextField fx:id="publishRate" promptText="毫秒">
                                  <HBox.margin>
                                     <Insets top="5.0" />
                                  </HBox.margin>
                               </TextField>
+                              <ImageView fx:id="publishRatePoint" disable="true" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                                 <HBox.margin>
+                                    <Insets left="10.0" top="10.0" />
+                                 </HBox.margin>
+                              </ImageView>
                            </children>
                         </HBox>
                      </children>
