@@ -19,7 +19,7 @@ import java.util.prefs.Preferences;
  */
 public class CommonUtil {
     public static final String BAT_FILE_PATH = "src/main/resources/newPreference.bat";
-    public static final String REG_FILE_PATH = "C:\\Program Files\\YAML-File-Generator\\prefs.reg";
+    public static final String REG_FILE_PATH = "C:\\YAML-File-Generator\\prefs.reg";
     public volatile static boolean isOccupation = false;
     private static Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
     public static final List<String> notListenerNames = Arrays.asList(
@@ -33,10 +33,10 @@ public class CommonUtil {
     public static double primaryStage_y;
     //多任务，多窗口，保存每一个窗口主stage和与之对应的数据
     public static final Map<MainApp, TransportData> STAGE_DATA_MAP = new HashMap<>(10);
-    public static final String default_file_path = "OPC UA YML PLATFORM";
+    public static final String default_file_path = "C:\\YAML-File-Generator";
     public static final String default_file_name = "opcua";
     public static final String default_file_suffix = ".yml";
-    public static final String history_record_file_path = "OPC UA YML PLATFORM" + File.separator + "history";
+    public static final String history_record_file_path = "C:\\YAML-File-Generator\\history";
     public static final String primary_stage_title_prefix = "OPC UA YML generate platform";
     public static final String image_url = "/images/platform.png";
 
@@ -54,13 +54,6 @@ public class CommonUtil {
     public static final String DEFAULT_FILE_PATH_KEY = "filePath";
     //保存，当前页面的pane，在切换主题时设置当前pane主题
     public static Pane current_page_pane;
-
-    static {
-        File file = new File(history_record_file_path);
-        if (!file.exists()) {
-            file.mkdirs();
-        }
-    }
 
     public static void unbindData(MainApp mainApp){
         STAGE_DATA_MAP.remove(mainApp);

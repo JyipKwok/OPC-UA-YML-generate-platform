@@ -1,7 +1,7 @@
 ::获取管理员权限
 %1 mshta vbscript:CreateObject("Shell.Application").ShellExecute("cmd.exe","/c %~s0 ::","","runas",1)(window.close)&&exit
-cd C:\Program Files
-md YAML-File-Generator
+cd C:\
+md YAML-File-Generator\history
 cd YAML-File-Generator
 @echo off
 @echo Windows Registry Editor Version 5.00> prefs.reg
