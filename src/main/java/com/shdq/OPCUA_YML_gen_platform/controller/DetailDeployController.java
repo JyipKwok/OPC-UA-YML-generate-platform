@@ -11,10 +11,13 @@ import javafx.animation.ParallelTransition;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Cursor;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
@@ -31,7 +34,6 @@ import java.util.Map;
  * @author shdq-fjy
  */
 public class DetailDeployController {
-
     private MainApp mainApp;
     OpcUaProperties properties;
     Map<String,String> plcDetailProperties;
@@ -59,19 +61,16 @@ public class DetailDeployController {
     private TextField clientListener;
     @FXML
     private TextField sessionTimeOut;
-
     private ToggleGroup isConnect;
     @FXML
     private RadioButton connect;
     @FXML
     private RadioButton unconnect;
-
     private ToggleGroup isSubscribe;
     @FXML
     private RadioButton subscribe;
     @FXML
     private RadioButton unsubscribe;
-
     @FXML
     private Label addressLabel;
     @FXML
@@ -94,12 +93,29 @@ public class DetailDeployController {
     private Label isConnectLabel;
     @FXML
     private Label isSubscribeLabel;
-
-    private boolean noError = true;
-
-    Alert alert = new Alert(Alert.AlertType.WARNING);
+    @FXML
+    private ImageView addressPoint;
+    @FXML
+    private ImageView plcNoPoint;
+    @FXML
+    private ImageView nsPoint;
+    @FXML
+    private ImageView usernamePoint;
+    @FXML
+    private ImageView passwordPoint;
+    @FXML
+    private ImageView clientListenerPoint;
+    @FXML
+    private ImageView sessionTimeOutPoint;
+    private boolean addressNoError = false;
+    private boolean plcNoNoError = false;
+    private boolean nsNoError = false;
+    private boolean usernameNoError = false;
+    private boolean passwordNoError = false;
+    private boolean clientListenerNoError = true;//默认有值
+    private boolean sessionTimeOutNoError = false;
     private boolean doubleClick = false;
-
+    Alert alert = new Alert(Alert.AlertType.WARNING);
     /**
      * Initializes the controller class. This method is automatically called
      * after the fxml file has been loaded.
@@ -107,6 +123,9 @@ public class DetailDeployController {
     @FXML
     private void initialize(){
         playEffects();
+        setTextFieldFocusedPropertyListener();
+        setTextFieldOnKeyPressedEvent();
+//        setTextFieldOnKeyTypedEvent();
         address.setTooltip(new Tooltip("客户端连接服务端地址，支持opc和http。"));
         plcNo.setTooltip(new Tooltip("正整数，并且不能重复。"));
         ns.setTooltip(new Tooltip("根据opc服务端配置。"));
@@ -126,11 +145,34 @@ public class DetailDeployController {
             if (userAuthenticationMode.equalsIgnoreCase("username")){
                 username.setDisable(false);
                 password.setDisable(false);
+                usernameNoError = false;
+                passwordNoError = false;
+                usernamePoint.setImage(new Image("/images/wrong.png"));
+                usernamePoint.setDisable(false);
+                usernamePoint.setCursor(Cursor.HAND);
+                usernamePoint.setOnMouseClicked(event -> {
+                    alert.setContentText(WrongMsg.username_MUST_NOT_NULL);
+                    alert.showAndWait();
+                });
+                passwordPoint.setImage(new Image("/images/wrong.png"));
+                passwordPoint.setDisable(false);
+                passwordPoint.setCursor(Cursor.HAND);
+                passwordPoint.setOnMouseClicked(event -> {
+                    alert.setContentText(WrongMsg.password_MUST_NOT_NULL);
+                    alert.showAndWait();
+                });
+                usernamePoint.setVisible(false);
+                passwordPoint.setVisible(false);
             }
             if (userAuthenticationMode.equalsIgnoreCase("anonymous")){
                 username.setDisable(true);
                 password.setDisable(true);
+                usernameNoError = true;
+                passwordNoError = true;
+                usernamePoint.setVisible(false);
+                passwordPoint.setVisible(false);
             }
+            setSaveButtonEnable();
         });
         isConnect = new ToggleGroup();
         isSubscribe = new ToggleGroup();
@@ -149,6 +191,118 @@ public class DetailDeployController {
         complete.setTooltip(new Tooltip("进入创建配置文件界面"));
     }
 
+    private void setTextFieldOnKeyTypedEvent() {
+        address.setOnKeyTyped(event -> {
+            validateInput("address",address.getText());
+        });
+        plcNo.setOnKeyTyped(event -> {
+            validateInput("plcNo",plcNo.getText());
+        });
+        ns.setOnKeyTyped(event -> {
+            validateInput("ns",ns.getText());
+        });
+        username.setOnKeyTyped(event -> {
+            if (!plcDetailProperties.get("userAuthenticationMode").equalsIgnoreCase("anonymous")){
+                validateInput("username",username.getText());
+            }
+        });
+        password.setOnKeyTyped(event -> {
+            if (!plcDetailProperties.get("userAuthenticationMode").equalsIgnoreCase("anonymous")){
+                validateInput("password",password.getText());
+            }
+        });
+        clientListener.setOnKeyTyped(event -> {
+            validateInput("clientListener",clientListener.getText());
+        });
+        sessionTimeOut.setOnKeyTyped(event -> {
+            validateInput("sessionTimeOut",sessionTimeOut.getText());
+        });
+    }
+
+    private void setTextFieldOnKeyPressedEvent() {
+        address.setOnKeyPressed(event -> {
+            if (event.getCode().equals(KeyCode.ENTER) || event.getCode().equals(KeyCode.TAB)){
+                validateInput("address",address.getText());
+            }
+        });
+        plcNo.setOnKeyPressed(event -> {
+            if (event.getCode().equals(KeyCode.ENTER) || event.getCode().equals(KeyCode.TAB)){
+                validateInput("plcNo",plcNo.getText());
+            }
+        });
+        ns.setOnKeyPressed(event -> {
+            if (event.getCode().equals(KeyCode.ENTER) || event.getCode().equals(KeyCode.TAB)){
+                validateInput("ns",ns.getText());
+            }
+        });
+        username.setOnKeyPressed(event -> {
+            if (event.getCode().equals(KeyCode.ENTER) || event.getCode().equals(KeyCode.TAB)){
+                if (!plcDetailProperties.get("userAuthenticationMode").equalsIgnoreCase("anonymous")){
+                    validateInput("username",username.getText());
+                }
+            }
+        });
+        password.setOnKeyPressed(event -> {
+            if (event.getCode().equals(KeyCode.ENTER) || event.getCode().equals(KeyCode.TAB)){
+                if (!plcDetailProperties.get("userAuthenticationMode").equalsIgnoreCase("anonymous")){
+                    validateInput("password",password.getText());
+                }
+            }
+        });
+        clientListener.setOnKeyPressed(event -> {
+            if (event.getCode().equals(KeyCode.ENTER) || event.getCode().equals(KeyCode.TAB)){
+                validateInput("clientListener",clientListener.getText());
+            }
+        });
+        sessionTimeOut.setOnKeyPressed(event -> {
+            if (event.getCode().equals(KeyCode.ENTER) || event.getCode().equals(KeyCode.TAB)){
+                validateInput("sessionTimeOut",sessionTimeOut.getText());
+            }
+        });
+    }
+
+    private void setTextFieldFocusedPropertyListener() {
+        address.focusedProperty().addListener((observable, oldValue, newValue) -> {
+            if (oldValue && !newValue){
+                validateInput("address",address.getText());
+            }
+        });
+        plcNo.focusedProperty().addListener((observable, oldValue, newValue) -> {
+            if (oldValue && !newValue){
+                validateInput("plcNo",plcNo.getText());
+            }
+        });
+        ns.focusedProperty().addListener((observable, oldValue, newValue) -> {
+            if (oldValue && !newValue){
+                validateInput("ns",ns.getText());
+            }
+        });
+        username.focusedProperty().addListener((observable, oldValue, newValue) -> {
+            if (oldValue && !newValue){
+                if (!plcDetailProperties.get("userAuthenticationMode").equalsIgnoreCase("anonymous")){
+                    validateInput("username",username.getText());
+                }
+            }
+        });
+        password.focusedProperty().addListener((observable, oldValue, newValue) -> {
+            if (oldValue && !newValue){
+                if (!plcDetailProperties.get("userAuthenticationMode").equalsIgnoreCase("anonymous")){
+                    validateInput("password",password.getText());
+                }
+            }
+        });
+        clientListener.focusedProperty().addListener((observable, oldValue, newValue) -> {
+            if (oldValue && !newValue){
+                validateInput("clientListener",clientListener.getText());
+            }
+        });
+        sessionTimeOut.focusedProperty().addListener((observable, oldValue, newValue) -> {
+            if (oldValue && !newValue){
+                validateInput("sessionTimeOut",sessionTimeOut.getText());
+            }
+        });
+    }
+
     private void playEffects() {
         List<Node> nodes = Arrays.asList(address,plcNo,ns,securityMode,userAuthenticationMode,username,password,clientListener,sessionTimeOut,
                 connect,unconnect,subscribe,unsubscribe);
@@ -165,49 +319,7 @@ public class DetailDeployController {
         });
     }
 
-    private void validateInput(){
-        alert.setTitle(WrongMsg.Validation_Error);
-        alert.setHeaderText(WrongMsg.Non_Standard_Input);
-        if (StringUtils.isBlank(address.getText())){
-            noError = false;
-            alert.setContentText(WrongMsg.address_MUST_NOT_NULL);
-            alert.showAndWait();
-        }else {
-            noError = true;
-            plcDetailProperties.put("address",address.getText());
-        }
-        if (!WrongMsg.pattern.matcher(plcNo.getText()).matches()) {
-            noError = false;
-            alert.setContentText(WrongMsg.plcNo_MUST_BE_INTEGER);
-            alert.showAndWait();
-        }else {
-            noError = true;
-            plcDetailProperties.put("plcNo",plcNo.getText());
-        }
-        if (!WrongMsg.pattern.matcher(ns.getText()).matches()) {
-            noError = false;
-            alert.setContentText(WrongMsg.ns_MUST_BE_INTEGER);
-            alert.showAndWait();
-        }else {
-            noError = true;
-            plcDetailProperties.put("ns", ns.getText());
-        }
-        if (StringUtils.isBlank(clientListener.getText())){
-            noError = false;
-            alert.setContentText(WrongMsg.clientListener_MUST_NOT_NULL);
-            alert.showAndWait();
-        }else {
-            noError = true;
-            plcDetailProperties.put("clientListener", clientListener.getText());
-        }
-        if (!WrongMsg.pattern.matcher(sessionTimeOut.getText()).matches()) {
-            noError = false;
-            alert.setContentText(WrongMsg.sessionTimeOut_MUST_BE_INTEGER);
-            alert.showAndWait();
-        }else {
-            noError = true;
-            plcDetailProperties.put("sessionTimeOut",sessionTimeOut.getText());
-        }
+    private void setSelectedInput(){
         if (plcDetailProperties.get("securityMode") == null){
             plcDetailProperties.put("securityMode","none");
         }
@@ -222,10 +334,167 @@ public class DetailDeployController {
         }
     }
 
+    private void validateInput(String name,String str){
+        alert.setTitle(WrongMsg.Validation_Error);
+        alert.setHeaderText(WrongMsg.Non_Standard_Input);
+        if (name.equals("address")){
+            //todo:还需添加url正则表达式比较，校验是否是合法的地址
+            if (StringUtils.isBlank(str)){
+                addressNoError = false;
+                addressPoint.setImage(new Image("/images/wrong.png"));
+                addressPoint.setVisible(true);
+                addressPoint.setDisable(false);
+                addressPoint.setCursor(Cursor.HAND);
+                addressPoint.setOnMouseClicked(event -> {
+                    alert.setContentText(WrongMsg.address_MUST_NOT_NULL);
+                    alert.showAndWait();
+                });
+            }else {
+                addressNoError = true;
+                addressPoint.setImage(new Image("/images/correct.png"));
+                addressPoint.setVisible(true);
+                addressPoint.setDisable(true);
+                addressPoint.setCursor(Cursor.DEFAULT);
+                plcDetailProperties.put(name,address.getText());
+            }
+        }
+        if (name.equals("plcNo")){
+            //todo：检查是否有重复的编号
+            if (StringUtils.isBlank(str) || !WrongMsg.pattern.matcher(str).matches()){
+                plcNoNoError = false;
+                plcNoPoint.setImage(new Image("/images/wrong.png"));
+                plcNoPoint.setVisible(true);
+                plcNoPoint.setDisable(false);
+                plcNoPoint.setCursor(Cursor.HAND);
+                plcNoPoint.setOnMouseClicked(event -> {
+                    alert.setContentText(WrongMsg.plcNo_MUST_NOT_NULL +"并且"+WrongMsg.plcNo_MUST_BE_INTEGER);
+                    alert.showAndWait();
+                });
+            }else {
+                plcNoNoError = true;
+                plcNoPoint.setImage(new Image("/images/correct.png"));
+                plcNoPoint.setVisible(true);
+                plcNoPoint.setDisable(true);
+                plcNoPoint.setCursor(Cursor.DEFAULT);
+                plcDetailProperties.put(name,plcNo.getText());
+            }
+        }
+        if (name.equals("ns")){
+            if (StringUtils.isBlank(str) || !WrongMsg.pattern.matcher(str).matches()){
+                nsNoError = false;
+                nsPoint.setImage(new Image("/images/wrong.png"));
+                nsPoint.setVisible(true);
+                nsPoint.setDisable(false);
+                nsPoint.setCursor(Cursor.HAND);
+                nsPoint.setOnMouseClicked(event -> {
+                    alert.setContentText(WrongMsg.ns_MUST_NOT_NULL+"并且"+WrongMsg.ns_MUST_BE_INTEGER);
+                    alert.showAndWait();
+                });
+            }else {
+                nsNoError = true;
+                nsPoint.setImage(new Image("/images/correct.png"));
+                nsPoint.setVisible(true);
+                nsPoint.setDisable(true);
+                nsPoint.setCursor(Cursor.DEFAULT);
+                plcDetailProperties.put(name,ns.getText());
+            }
+        }
+        if (name.equals("username")){
+            if (StringUtils.isBlank(str)){
+                usernameNoError = false;
+                usernamePoint.setImage(new Image("/images/wrong.png"));
+                usernamePoint.setVisible(true);
+                usernamePoint.setDisable(false);
+                usernamePoint.setCursor(Cursor.HAND);
+                usernamePoint.setOnMouseClicked(event -> {
+                    alert.setContentText(WrongMsg.username_MUST_NOT_NULL);
+                    alert.showAndWait();
+                });
+            }else {
+                usernameNoError = true;
+                usernamePoint.setImage(new Image("/images/correct.png"));
+                usernamePoint.setVisible(true);
+                usernamePoint.setDisable(true);
+                usernamePoint.setCursor(Cursor.DEFAULT);
+                plcDetailProperties.put(name,username.getText());
+            }
+        }
+        if (name.equals("password")){
+            if (StringUtils.isBlank(str)){
+                passwordNoError = false;
+                passwordPoint.setImage(new Image("/images/wrong.png"));
+                passwordPoint.setVisible(true);
+                passwordPoint.setDisable(false);
+                passwordPoint.setCursor(Cursor.HAND);
+                passwordPoint.setOnMouseClicked(event -> {
+                    alert.setContentText(WrongMsg.password_MUST_NOT_NULL);
+                    alert.showAndWait();
+                });
+            }else {
+                passwordNoError = true;
+                passwordPoint.setImage(new Image("/images/correct.png"));
+                passwordPoint.setVisible(true);
+                passwordPoint.setDisable(true);
+                passwordPoint.setCursor(Cursor.DEFAULT);
+                plcDetailProperties.put(name,password.getText());
+            }
+        }
+        if (name.equals("clientListener")){
+            if (StringUtils.isBlank(str)){
+                clientListenerNoError = false;
+                clientListenerPoint.setImage(new Image("/images/wrong.png"));
+                clientListenerPoint.setVisible(true);
+                clientListenerPoint.setDisable(false);
+                clientListenerPoint.setCursor(Cursor.HAND);
+                clientListenerPoint.setOnMouseClicked(event -> {
+                    alert.setContentText(WrongMsg.clientListener_MUST_NOT_NULL);
+                    alert.showAndWait();
+                });
+            }else {
+                clientListenerNoError = true;
+                clientListenerPoint.setImage(new Image("/images/correct.png"));
+                clientListenerPoint.setVisible(true);
+                clientListenerPoint.setDisable(true);
+                clientListenerPoint.setCursor(Cursor.DEFAULT);
+                plcDetailProperties.put(name,clientListener.getText());
+            }
+        }
+        if (name.equals("sessionTimeOut")){
+            if (StringUtils.isBlank(str) || !WrongMsg.pattern.matcher(str).matches()){
+                sessionTimeOutNoError = false;
+                sessionTimeOutPoint.setImage(new Image("/images/wrong.png"));
+                sessionTimeOutPoint.setVisible(true);
+                sessionTimeOutPoint.setDisable(false);
+                sessionTimeOutPoint.setCursor(Cursor.HAND);
+                sessionTimeOutPoint.setOnMouseClicked(event -> {
+                    alert.setContentText(WrongMsg.sessionTimeOut_MUST_NOT_NULL +"并且"+WrongMsg.sessionTimeOut_MUST_BE_INTEGER);
+                    alert.showAndWait();
+                });
+            }else {
+                sessionTimeOutNoError = true;
+                sessionTimeOutPoint.setImage(new Image("/images/correct.png"));
+                sessionTimeOutPoint.setVisible(true);
+                sessionTimeOutPoint.setDisable(true);
+                sessionTimeOutPoint.setCursor(Cursor.DEFAULT);
+                plcDetailProperties.put(name,sessionTimeOut.getText());
+            }
+        }
+        setSaveButtonEnable();
+    }
+
+    private void setSaveButtonEnable() {
+        if (addressNoError && plcNoNoError && nsNoError && usernameNoError && passwordNoError && clientListenerNoError && sessionTimeOutNoError){
+            save.setDisable(false);
+        }else {
+            save.setDisable(true);
+        }
+    }
+
     public void setMainApp(MainApp mainApp) {
         this.mainApp = mainApp;
         properties = OpcUaProperties.getProperties(mainApp);
         setDefaultData();
+        setSelectedInput();
     }
 
     private void setDefaultData(){
@@ -236,41 +505,8 @@ public class DetailDeployController {
         clientListener.setText("com.opc.uaclient.uaclientlistener.MyUaClientListener");
     }
 
-    private void inputPassword() {
-        if (StringUtils.isBlank(password .getText())){
-            noError = false;
-            alert.setTitle(WrongMsg.Validation_Error);
-            alert.setHeaderText(WrongMsg.Non_Standard_Input);
-            alert.setContentText(WrongMsg.password_MUST_NOT_NULL);
-            alert.showAndWait();
-        }else {
-            noError = true;
-            plcDetailProperties.put("password", password.getText());
-        }
-    }
-
-    private void inputUsername() {
-        if (StringUtils.isBlank(username.getText())){
-            noError = false;
-            alert.setTitle(WrongMsg.Validation_Error);
-            alert.setHeaderText(WrongMsg.Non_Standard_Input);
-            alert.setContentText(WrongMsg.username_MUST_NOT_NULL);
-            alert.showAndWait();
-        }else {
-            noError = true;
-            plcDetailProperties.put("username", username.getText());
-        }
-    }
-
     @FXML
     private void nextDetailDeploy(){
-        if (!noError){
-            alert.setTitle(WrongMsg.Validation_Error);
-            alert.setHeaderText(WrongMsg.Non_Standard_Input);
-            alert.setContentText(WrongMsg.PLEASE_CORRECT_NON_STANDARD_INPUT_FIRST);
-            alert.showAndWait();
-            return;
-        }
         BorderPane rootLayout = mainApp.getRootLayout();
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(MainApp.class.getResource("/view/DetailDeployPage.fxml"));
@@ -291,23 +527,11 @@ public class DetailDeployController {
 
     @FXML
     private void saveDetailDeploy(){
-        validateInput();
-        if (!noError){
-            alert.setTitle(WrongMsg.Validation_Error);
-            alert.setHeaderText(WrongMsg.Non_Standard_Input);
-            alert.setContentText(WrongMsg.PLEASE_CORRECT_NON_STANDARD_INPUT_FIRST);
-            alert.showAndWait();
-            return;
-        }
         //防止重复点击，重复保存当前opc客户端数据
         if (doubleClick){
             return;
         }
         doubleClick = true;
-        if (!plcDetailProperties.get("userAuthenticationMode").equalsIgnoreCase("anonymous")){
-            inputUsername();
-            inputPassword();
-        }
         properties.getPlcList().add(plcDetailProperties);
         next.setDisable(false);
         complete.setDisable(false);

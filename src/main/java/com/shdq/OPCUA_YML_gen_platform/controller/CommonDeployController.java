@@ -5,8 +5,6 @@ import com.shdq.OPCUA_YML_gen_platform.animation.MyAnimation;
 import com.shdq.OPCUA_YML_gen_platform.model.OpcUaProperties;
 import com.shdq.OPCUA_YML_gen_platform.util.WrongMsg;
 import javafx.animation.ParallelTransition;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Cursor;
@@ -59,7 +57,7 @@ public class CommonDeployController {
         playEffects();
         setTextFieldFocusedPropertyListener();
         setTextFieldOnKeyPressedEvent();
-        setTextFieldOnKeyTypedEvent();
+//        setTextFieldOnKeyTypedEvent();
         listenerPath.setTooltip(new Tooltip("监听器类的包路径，最后以“.”结尾。"));
         nodesParser.setTooltip(new Tooltip("自定义节点解析器包名+类名，用于解析后续配置监听器和监听节点对中，对节点字符串的解析。"));
         publishRate.setTooltip(new Tooltip("监听器刷新率（推送响应速率）。"));

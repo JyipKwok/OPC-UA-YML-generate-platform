@@ -107,26 +107,18 @@ public class DetailDeployOverviewController {
         clientListener.setTooltip(new Tooltip("客户端的监听器，监听当前客户端的所有输入输出，系统默认：com.opc.uaclient.uaclientlistener.MyUaClientListener。"));
         sessionTimeOut.setTooltip(new Tooltip("会话过期时间。"));
         securityMode.setItems(FXCollections.observableArrayList("none",new Separator(),"sign",new Separator(),"sign&encrypt"));
-        securityMode.getSelectionModel().selectedItemProperty().addListener(new ChangeListener() {
-            @Override
-            public void changed(ObservableValue observable, Object oldValue, Object newValue) {
-                plcDetailDeployMap.put("securityMode",String.valueOf(newValue));
-            }
-        });
+        securityMode.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> plcDetailDeployMap.put("securityMode",String.valueOf(newValue)));
         userAuthenticationMode.setItems(FXCollections.observableArrayList("anonymous",new Separator(),"username"));
-        userAuthenticationMode.getSelectionModel().selectedItemProperty().addListener(new ChangeListener() {
-            @Override
-            public void changed(ObservableValue observable, Object oldValue, Object newValue) {
-                String userAuthenticationMode = String.valueOf(newValue);
-                plcDetailDeployMap.put("userAuthenticationMode",userAuthenticationMode);
-//                if (userAuthenticationMode.equalsIgnoreCase("username")){
-//                    username.setDisable(false);
-//                    password.setDisable(false);
-//                }
-//                if (userAuthenticationMode.equalsIgnoreCase("anonymous")){
-//                    username.setDisable(true);
-//                    password.setDisable(true);
-//                }
+        userAuthenticationMode.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            String userAuthenticationMode = String.valueOf(newValue);
+            plcDetailDeployMap.put("userAuthenticationMode",userAuthenticationMode);
+            if (userAuthenticationMode.equalsIgnoreCase("username")){
+                username.setDisable(false);
+                password.setDisable(false);
+            }
+            if (userAuthenticationMode.equalsIgnoreCase("anonymous")){
+                username.setDisable(true);
+                password.setDisable(true);
             }
         });
         isConnect = new ToggleGroup();
@@ -139,7 +131,6 @@ public class DetailDeployOverviewController {
         unconnect.setToggleGroup(isConnect);
         isConnect.selectedToggleProperty().addListener((observable, oldValue, newValue) ->
                 plcDetailDeployMap.put("isConnect",isConnect.getSelectedToggle().getUserData().toString()));
-
         subscribe.setToggleGroup(isSubscribe);
         unsubscribe.setToggleGroup(isSubscribe);
         isSubscribe.selectedToggleProperty().addListener((observable, oldValue, newValue) ->

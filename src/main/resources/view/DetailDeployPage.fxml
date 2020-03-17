@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
@@ -34,6 +35,7 @@
                                        </padding>
                                     </Label>
                                     <TextField fx:id="address" layoutX="234.0" layoutY="-1.0" prefHeight="20.0" prefWidth="250.0" promptText="opc.tcp://10.28.213.213:4840" />
+                                    <ImageView fx:id="addressPoint" disable="true" fitHeight="20.0" fitWidth="20.0" layoutX="494.0" pickOnBounds="true" preserveRatio="true" visible="false" AnchorPane.topAnchor="5.0" />
                                  </children>
                                  <VBox.margin>
                                     <Insets bottom="5.0" top="5.0" />
@@ -47,6 +49,7 @@
                                        </padding>
                                     </Label>
                                     <TextField fx:id="plcNo" layoutX="234.0" layoutY="-1.0" prefHeight="20.0" prefWidth="250.0" promptText="plc编号" />
+                                    <ImageView fx:id="plcNoPoint" disable="true" fitHeight="20.0" fitWidth="20.0" layoutX="494.0" pickOnBounds="true" preserveRatio="true" visible="false" AnchorPane.topAnchor="5.0" />
                                  </children>
                                  <VBox.margin>
                                     <Insets bottom="5.0" top="5.0" />
@@ -60,6 +63,7 @@
                                        </padding>
                                     </Label>
                                     <TextField fx:id="ns" layoutX="234.0" layoutY="-1.0" prefHeight="20.0" prefWidth="250.0" promptText="namespaceIndex" />
+                                    <ImageView fx:id="nsPoint" disable="true" fitHeight="20.0" fitWidth="20.0" layoutX="494.0" pickOnBounds="true" preserveRatio="true" visible="false" AnchorPane.topAnchor="5.0" />
                                  </children>
                                  <VBox.margin>
                                     <Insets bottom="5.0" top="5.0" />
@@ -107,6 +111,7 @@
                                        </padding>
                                     </Label>
                                     <TextField fx:id="username" disable="true" layoutX="234.0" layoutY="-1.0" prefHeight="20.0" prefWidth="250.0" />
+                                    <ImageView fx:id="usernamePoint" disable="true" fitHeight="20.0" fitWidth="20.0" layoutX="494.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" visible="false" AnchorPane.topAnchor="5.0" />
                                  </children>
                                  <VBox.margin>
                                     <Insets bottom="5.0" top="5.0" />
@@ -120,6 +125,7 @@
                                        </padding>
                                     </Label>
                                     <TextField fx:id="password" disable="true" layoutX="234.0" layoutY="1.0" prefHeight="20.0" prefWidth="250.0" />
+                                    <ImageView fx:id="passwordPoint" disable="true" fitHeight="20.0" fitWidth="20.0" layoutX="494.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" visible="false" AnchorPane.topAnchor="5.0" />
                                  </children>
                                  <VBox.margin>
                                     <Insets bottom="5.0" top="5.0" />
@@ -133,6 +139,7 @@
                                        </padding>
                                     </Label>
                                     <TextField fx:id="clientListener" layoutX="234.0" layoutY="-1.0" prefHeight="20.0" prefWidth="250.0" />
+                                    <ImageView fx:id="clientListenerPoint" disable="true" fitHeight="20.0" fitWidth="20.0" layoutX="494.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" visible="false" AnchorPane.topAnchor="5.0" />
                                  </children>
                                  <VBox.margin>
                                     <Insets bottom="5.0" top="5.0" />
@@ -146,6 +153,7 @@
                                        </padding>
                                     </Label>
                                     <TextField fx:id="sessionTimeOut" layoutX="234.0" layoutY="1.0" prefHeight="20.0" prefWidth="250.0" promptText="天" />
+                                    <ImageView fx:id="sessionTimeOutPoint" disable="true" fitHeight="20.0" fitWidth="20.0" layoutX="494.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" visible="false" AnchorPane.topAnchor="5.0" />
                                  </children>
                                  <VBox.margin>
                                     <Insets bottom="5.0" top="5.0" />
@@ -213,7 +221,7 @@
                               </AnchorPane>
                               <AnchorPane prefHeight="35.0" prefWidth="600.0">
                                  <children>
-                                    <Button fx:id="save" contentDisplay="CENTER" defaultButton="true" layoutX="250.0" layoutY="4.0" mnemonicParsing="false" onAction="#saveDetailDeploy" text="保存" />
+                                    <Button fx:id="save" contentDisplay="CENTER" disable="true" layoutX="250.0" layoutY="4.0" mnemonicParsing="false" onAction="#saveDetailDeploy" text="保存" />
                                     <Button fx:id="next" contentDisplay="CENTER" disable="true" layoutX="317.0" layoutY="4.0" mnemonicParsing="false" onAction="#nextDetailDeploy" prefHeight="30.0" prefWidth="100.0" text="下一个">
                                        <font>
                                           <Font name="Microsoft YaHei Bold" size="15.0" />
