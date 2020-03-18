@@ -5,14 +5,21 @@ import com.shdq.OPCUA_YML_gen_platform.model.OpcUaProperties;
 import com.shdq.OPCUA_YML_gen_platform.model.TransportData;
 import com.shdq.OPCUA_YML_gen_platform.util.*;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.CheckMenuItem;
 import javafx.scene.control.MenuItem;
+import javafx.scene.image.Image;
+import javafx.scene.layout.Pane;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.File;
+import java.io.IOException;
 
 /**
  * @author shdq-fjy
@@ -157,16 +164,64 @@ public class RootLayoutController {
 
     @FXML
     private void handleAboutApplication(){
-
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(MainApp.class.getResource("/view/AboutApplication.fxml"));
+        try {
+            Pane pane = loader.load();
+            ThemeUtil.setMainTheme(pane);
+            Stage dialogStage = new Stage();
+            dialogStage.setTitle("关于应用");
+            dialogStage.setResizable(false);
+            dialogStage.initOwner(mainApp.getPrimaryStage());
+            dialogStage.initModality(Modality.WINDOW_MODAL);
+            dialogStage.getIcons().add(new Image(CommonUtil.image_url));
+            dialogStage.setScene(new Scene(pane));
+            CommonUtil.setDialogWindowCoordinate(mainApp.getPrimaryStage(),dialogStage);
+            dialogStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
     private void handleAboutAuthor(){
-
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(MainApp.class.getResource("/view/AboutAuthor.fxml"));
+        try {
+            Pane pane = loader.load();
+            ThemeUtil.setMainTheme(pane);
+            Stage dialogStage = new Stage();
+            dialogStage.setTitle("关于作者");
+            dialogStage.setResizable(false);
+            dialogStage.initOwner(mainApp.getPrimaryStage());
+            dialogStage.initModality(Modality.WINDOW_MODAL);
+            dialogStage.getIcons().add(new Image(CommonUtil.image_url));
+            dialogStage.setScene(new Scene(pane));
+            CommonUtil.setDialogWindowCoordinate(mainApp.getPrimaryStage(),dialogStage);
+            dialogStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
     private void handleFeedback(){
-
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(MainApp.class.getResource("/view/FeedBack.fxml"));
+        try {
+            Pane pane = loader.load();
+            ThemeUtil.setMainTheme(pane);
+            Stage dialogStage = new Stage();
+            dialogStage.setTitle("反馈");
+            dialogStage.setResizable(false);
+            dialogStage.initOwner(mainApp.getPrimaryStage());
+            dialogStage.initModality(Modality.WINDOW_MODAL);
+            dialogStage.getIcons().add(new Image(CommonUtil.image_url));
+            dialogStage.setScene(new Scene(pane));
+            CommonUtil.setDialogWindowCoordinate(mainApp.getPrimaryStage(),dialogStage);
+            dialogStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
