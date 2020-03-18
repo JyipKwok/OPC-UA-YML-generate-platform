@@ -1,5 +1,6 @@
 package com.shdq.OPCUA_YML_gen_platform.util;
 
+import com.shdq.OPCUA_YML_gen_platform.MainApp;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Platform;
@@ -7,6 +8,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import lombok.extern.slf4j.Slf4j;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -14,11 +16,13 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.io.File;
+import java.io.InputStream;
 
 /**
  * 自定义系统托盘
  * @author shdq-fjy
  */
+@Slf4j
 public class MySysTray {
     private TrayIcon trayIcon = null;
     private Timeline timeline = new Timeline();
@@ -96,9 +100,9 @@ public class MySysTray {
         hideItem.addActionListener(actionListener);
 
         try {
-            File file = new File("src/main/resources/images/tray.png");
+            InputStream inputStream = MainApp.class.getResourceAsStream("/images/tray.png");
             // 4、我们的托盘图标
-            trayIcon = new TrayIcon(ImageIO.read(file), "OPC UA YML Generate Platform", popupMenu);
+            trayIcon = new TrayIcon(ImageIO.read(inputStream), "OPC UA YML Generate Platform", popupMenu);
             // 5、鼠标悬浮时的提示信息
             trayIcon.setToolTip("OPC UA YML Generate Platform");
             // 6、添加到系统托盘
@@ -140,6 +144,7 @@ public class MySysTray {
                 public void mouseEntered(MouseEvent e) {}
             });
         } catch (Exception e) {
+            log.debug(e.getCause().getMessage());
             e.printStackTrace();
         }
     }
