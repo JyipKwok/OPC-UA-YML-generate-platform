@@ -31,10 +31,16 @@ public class MySysTray {
     public void initSystemTray() {
         // 1、创建托盘按钮
         PopupMenu popupMenu = new PopupMenu();
-        MenuItem showItem = new MenuItem("show"); popupMenu.add(showItem);
-        MenuItem hideItem = new MenuItem("hidden"); popupMenu.add(hideItem);
-        MenuItem quitItem = new MenuItem("exit"); popupMenu.add(quitItem);
+//        MenuItem showItem = new MenuItem("show"); popupMenu.add(showItem);
+//        MenuItem hideItem = new MenuItem("hidden"); popupMenu.add(hideItem);
+//        MenuItem quitItem = new MenuItem("exit"); popupMenu.add(quitItem);
 
+        //如果系统托盘中文乱码（原因是系统托盘默认使用windows系统编码格式，而JVM中的编码格式跟windows默认编码不一致），
+        // 肯定是你的JVM的环境变量没有设置这个-Dfile.encoding=GB18030，这个时候如果你用的Eclipse在Run Configurations中的VM arguments中添加即可
+        //如果你是打包成EXE程序了，那么你一般不会遇到系统托盘中文乱码问题。
+        MenuItem showItem = new MenuItem("显示"); popupMenu.add(showItem);
+        MenuItem hideItem = new MenuItem("隐藏"); popupMenu.add(hideItem);
+        MenuItem quitItem = new MenuItem("退出"); popupMenu.add(quitItem);
         // 2、创建动作事件监听器（awt的古老操作）
         ActionListener actionListener = new ActionListener() {
             @Override
@@ -44,7 +50,7 @@ public class MySysTray {
 
                 // 获得按钮并执行相应操作
                 MenuItem item = (MenuItem) e.getSource();
-                if (item.getLabel().equals("exit")) {
+                if (item.getLabel().equals("退出")) {
                     // 移除托盘图标
                     SystemTray.getSystemTray().remove(trayIcon);
                     // 关闭应用
@@ -65,7 +71,7 @@ public class MySysTray {
                     timeline.play();
                 }
 
-                else if (item.getLabel().equals("show")) {
+                else if (item.getLabel().equals("显示")) {
                     Platform.runLater(new Runnable() {
                         @Override
                         public void run() {
@@ -74,7 +80,7 @@ public class MySysTray {
                     });
                 }
 
-                else if (item.getLabel().equals("hidden")) {
+                else if (item.getLabel().equals("隐藏")) {
                     Platform.runLater(new Runnable() {
                         @Override
                         public void run() {
