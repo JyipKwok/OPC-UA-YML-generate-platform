@@ -6,6 +6,7 @@ import com.shdq.OPCUA_YML_gen_platform.controller.RootLayoutController;
 import com.shdq.OPCUA_YML_gen_platform.model.OpcUaProperties;
 import com.shdq.OPCUA_YML_gen_platform.model.TransportData;
 import com.shdq.OPCUA_YML_gen_platform.util.CommonUtil;
+import com.shdq.OPCUA_YML_gen_platform.util.JavaCMDUtil;
 import com.shdq.OPCUA_YML_gen_platform.util.ThemeUtil;
 import javafx.application.Application;
 import javafx.application.Platform;
@@ -32,6 +33,14 @@ import java.util.prefs.Preferences;
 public class MainApp extends Application {
     private Stage primaryStage;
     private BorderPane rootLayout;
+
+    public static void main(String[] args) {
+        File file = new File(CommonUtil.REG_FILE_PATH);
+        if (!file.exists()){
+            JavaCMDUtil.runBatWithoutCmd(CommonUtil.BAT_FILE_PATH);
+        }
+        launch(args);
+    }
 
     @Override
     public void start(Stage primaryStage){
@@ -134,10 +143,6 @@ public class MainApp extends Application {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    public static void myLaunch(String... args){
-        launch(args);
     }
 
     /**
