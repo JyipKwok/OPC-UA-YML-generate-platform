@@ -1,9 +1,10 @@
+package com.controlsfx.test;
+
 import javafx.application.Application;
 import javafx.concurrent.Service;
 import javafx.concurrent.Task;
-import javafx.geometry.Insets;
-import javafx.geometry.Pos;
-import javafx.geometry.Rectangle2D;
+import javafx.geometry.*;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -27,31 +28,38 @@ public class MainApp extends Application {
         grid.setPadding(new Insets(5, 10, 10, 10));
         grid.setHgap(10);
         grid.setVgap(10);
+        grid.setAlignment(Pos.CENTER);
         button = new Button();
         button.setText("点击开始任务");
         button.setOnMouseClicked(event -> {
             runTask(new MyTask());
             System.out.println("执行任务");
         });
-        progressBar = new ProgressBar();
-//        progressBar = new ProgressIndicator();
+//        progressBar = new ProgressBar();
+        progressBar = new ProgressIndicator();
         label = new Label();
         progressBar.setVisible(false);
         progressBar.setDisable(true);
         label.setVisible(false);
         label.setDisable(true);
         grid.addColumn(0,button,progressBar,label);
+        //设置GridPane网格内ChildNode水平垂直居中
+        for (Node n : grid.getChildren()) {
+            Integer row = GridPane.getRowIndex(n);
+            Integer column = GridPane.getColumnIndex(n);
+            GridPane.setHalignment(n, HPos.CENTER);
+            GridPane.setValignment(n,VPos.CENTER);
+        }
         GridPane.setMargin(button, new Insets(5, 0, 0, 0));
         GridPane.setMargin(progressBar, new Insets(5, 0, 0, 0));
         GridPane.setMargin(label, new Insets(5, 0, 0, 0));
-        grid.setAlignment(Pos.CENTER);
         Scene scene = new Scene(grid);
         primaryStage.setScene(scene);
-        primaryStage.setMinWidth(1000);
-        primaryStage.setMinHeight(600);
+        primaryStage.setMinWidth(500);
+        primaryStage.setMinHeight(300);
         Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
-        primaryStage.setWidth(screenBounds.getWidth() * 0.75);
-        primaryStage.setHeight(screenBounds.getHeight() * .75);
+        primaryStage.setWidth(screenBounds.getWidth() * 0.15);
+        primaryStage.setHeight(screenBounds.getHeight() * 0.15);
         primaryStage.setTitle("Async task");
         primaryStage.show();
     }
@@ -73,16 +81,19 @@ public class MainApp extends Application {
                 return task;
             }
         };
-        progressBar.progressProperty().bind(service.progressProperty());
+        progressBar.progressProperty().bind(task.progressProperty());
+        //使用service.getxxx()和使用回调函数中的newValue获取到的值是一样的
         task.messageProperty().addListener((observable, oldValue, newValue) -> {
             label.setText(service.getMessage());
-            if (service.getValue() == null || (service.getValue() < 100 && service.getValue() >0)){
-                label.setTextFill(Color.gray(0.3));
-            }else if (service.getValue() == 100){
-                label.setTextFill(Color.rgb(0,255,0));
+        });
+        task.valueProperty().addListener((observable, oldValue, newValue) -> {
+            label.setTextFill(Color.GRAY);
+            if ((int)newValue == 100 || (int)newValue == 1){
+                label.setTextFill(Color.GREEN);
                 taskComplete();
-            }else {
-                label.setTextFill(Color.rgb(255,0,0));
+            }
+            if ((int) newValue == -1){
+                label.setTextFill(Color.RED);
                 taskOnError();
             }
         });
@@ -102,8 +113,8 @@ public class MainApp extends Application {
     private void taskComplete() {
         progressBar.setDisable(true);
         progressBar.setVisible(false);
-        label.setDisable(true);
-        label.setVisible(false);
+//        label.setDisable(true);
+//        label.setVisible(false);
     }
 
     public static void main(String[] args) {
@@ -128,13 +139,11 @@ public class MainApp extends Application {
                     Thread.sleep(50);
                 }
                 updateMessage("创建成功！");
-                Thread.sleep(1000);
                 return 1;
             } catch (Exception e) {
                 updateMessage("任务出错！");
                 updateValue(-1);
                 updateProgress(-1, 1);
-                Thread.sleep(1000);
                 return -1;
             }
         }
